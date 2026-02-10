@@ -1,35 +1,49 @@
-﻿namespace Kosci {
-	public partial class MainPage : ContentPage {
-		private int allRolls = 0;
+﻿using System;
+using Microsoft.Maui.Controls;
 
-		public MainPage() {
-			InitializeComponent();
-		}
+namespace Kosci {
+    public partial class MainPage : ContentPage
+    {
+        int sumaGry = 0;
 
-		private void RollDice_ButtonClicked(object? sender, EventArgs e) {
-			List<Image> images = [Img1, Img2, Img3, Img4, Img5];
+        public MainPage()
+        {
+            InitializeComponent();
+        }
 
-			var roll = images.Select(image => {
-				var random = new Random().Next(1, 7);
-				image.Source = $"k{random}.jpg";
-				return random;
-			}).GroupBy(x => x).Where(x => x.Count() >= 2).SelectMany(x => x).Sum();
-			allRolls += roll;
+        private void Losowanie_Clicked(object sender, EventArgs e)
+        {
+            Random random = new Random();
 
-			CurrentRoll.Text = $"Wynik tego losowania: {roll}";
-			AllRolls.Text = $"Wynik gry: {allRolls}";
-		}
+            int kosc1 = random.Next(1, 7);
+            int kosc2 = random.Next(1, 7);
+            int kosc3 = random.Next(1, 7);
+            int kosc4 = random.Next(1, 7);
+            int kosc5 = random.Next(1, 7);
 
-		private void Reset_ButtonClicked(object? sender, EventArgs e) {
-			List<Image> images = [Img1, Img2, Img3, Img4, Img5];
+            kostka_img1.Source = $"k{kosc1}.jpg";
+            kostka_img2.Source = $"k{kosc2}.jpg";
+            kostka_img3.Source = $"k{kosc3}.jpg";
+            kostka_img4.Source = $"k{kosc4}.jpg";
+            kostka_img5.Source = $"k{kosc5}.jpg";
 
-			foreach (var image in images) {
-				image.Source = "question.jpg";
-			}
+            int suma = kosc1 + kosc2 + kosc3 + kosc4 + kosc5;
 
-			allRolls = 0;
-			CurrentRoll.Text = $"Wynik tego losowania: 0";
-			AllRolls.Text = $"Wynik gry: 0";
-		}
-	}
+            wynik.Text = "Wynik tego losowania: " + suma;
+            sumaGry = sumaGry + suma;
+            wynik_gry.Text = "Wynik gry: " + sumaGry;
+        }
+
+        private void Reset_Clicked(object sender, EventArgs e)
+        {
+            sumaGry = 0;
+            kostka_img1.Source = "question.jpg";
+            kostka_img2.Source = "question.jpg";
+            kostka_img3.Source = "question.jpg";
+            kostka_img4.Source = "question.jpg";
+            kostka_img5.Source = "question.jpg";
+            wynik_gry.Text = "Wynik gry: 0";
+            wynik.Text = "Wynik tego losowania: ";
+        }
+    }
 }
