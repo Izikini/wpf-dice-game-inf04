@@ -5,6 +5,7 @@ namespace Kosci {
     public partial class MainPage : ContentPage
     {
         int sumaGry = 0;
+        private readonly Random random = new Random();
 
         public MainPage()
         {
@@ -13,8 +14,6 @@ namespace Kosci {
 
         private void Losowanie_Clicked(object sender, EventArgs e)
         {
-            Random random = new Random();
-
             int kosc1 = random.Next(1, 7);
             int kosc2 = random.Next(1, 7);
             int kosc3 = random.Next(1, 7);
@@ -27,10 +26,23 @@ namespace Kosci {
             kostka_img4.Source = $"k{kosc4}.jpg";
             kostka_img5.Source = $"k{kosc5}.jpg";
 
-            int suma = kosc1 + kosc2 + kosc3 + kosc4 + kosc5;
+            int[] rolls = new[] { kosc1, kosc2, kosc3, kosc4, kosc5 };
+            int[] counts = new int[7];
+            foreach (var v in rolls)
+            {
+                counts[v]++;
+            }
+            int suma = 0;
+            for (int value = 1; value <= 6; value++)
+            {
+                if (counts[value] >= 2)
+                {
+                    suma += counts[value] * value;
+                }
+            }
 
             wynik.Text = "Wynik tego losowania: " + suma;
-            sumaGry = sumaGry + suma;
+            sumaGry += suma;
             wynik_gry.Text = "Wynik gry: " + sumaGry;
         }
 
