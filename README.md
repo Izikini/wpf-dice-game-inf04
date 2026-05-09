@@ -1,18 +1,21 @@
-# Dice Game (INF.04 Task)
+# 🎲 Gra w Kości (Dice Game) — INF.04 Project
 
-A desktop dice game application built with C# and WPF as part of the INF.04 vocational exam preparation.
+A desktop dice game application built as a solution for the INF.04 professional vocational examination. The app simulates rolling dice, calculates points based on combinations, and tracks game scores. 🏆
 
-## Functionality
-- **Rolling Mechanism:** Simulates rolling 5 dice with random results (1-6).
-- **Score Calculation:** Automatically calculates points based on the game rules for matching dice values.
-- **Game State:** Tracks the current roll score and the total game score.
-- **Image Integration:** Dynamically updates UI Image controls to display corresponding dice faces.
+## 🛠️ Technical Stack
+* **Language:** C# 🔷
+* **Framework:** WPF (.NET) 🖼️
+* **Pattern:** Event-driven logic 🛠️
 
-## Tech Stack
-- **Framework:** WPF (.NET)
-- **Language:** C# / XAML
+## 🚀 Key Features
+* **Dice Simulation:** Roll 5 dice simultaneously with randomized results (1-6). 🎲
+* **Smart Scoring:** Logic to identify matching dice and calculate points according to game rules. 📈
+* **Dynamic UI:** Real-time updates of dice face images and score labels. 🖼️
+* **Session Tracking:** Keeps track of both the current roll and the total game score. 🔢
 
-## How to use
-1. Open the solution in Visual Studio 2022.
-2. Build and run the project.
-3. Click the "Rzuć kośćmi" (Roll) button to play and "Zatwierdź wynik" to save the score.
+## ⚙️ How to Clone & Run
+
+1. **Clone the repository** 📂
+   Open your terminal and run:
+   ```bash
+   git clone [https://github.com/Izikini/Gra_Kosci--Arkusz_INF.04.git](https://github.com/Izikini/Gra_Kosci--Arkusz_INF.04.git)
