@@ -17,6 +17,8 @@ A desktop dice game application built as a solution for the INF.04 professional 
 
 1. **Clone the repository** 📂
    Open your terminal and run:
-   ```bash
+   ```
    git clone [https://github.com/Izikini/wpf-dice-game-inf04.git](https://github.com/Izikini/wpf-dice-game-inf04.git)
-   
+   cd wpf-dice-game-inf04
+   devenv "C:\path\to\your\project.sln"
+   ```
