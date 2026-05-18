@@ -18,4 +18,5 @@ A desktop dice game application built as a solution for the INF.04 professional 
 1. **Clone the repository** 📂
    Open your terminal and run:
    ```bash
-   git clone [https://github.com/Izikini/Gra_Kosci--Arkusz_INF.04.git](https://github.com/Izikini/Gra_Kosci--Arkusz_INF.04.git)
+   git clone [https://github.com/Izikini/wpf-dice-game-inf04.git](https://github.com/Izikini/wpf-dice-game-inf04.git)
+   
